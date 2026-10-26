@@ -1,0 +1,29 @@
+# Update: the Updates tab lists the old Markor; update it through the system installer dialog.
+appId: tech.axi0.f0store
+---
+- launchApp
+- extendedWaitUntil:
+    visible: "axi0 picks"
+    timeout: 60000
+- tapOn: "Updates"
+- extendedWaitUntil:
+    visible: "Markor"
+    timeout: 120000
+- takeScreenshot: 05a-updates-tab
+- tapOn: "Markor"
+- waitForAnimationToEnd
+- tapOn: "Update"
+- extendedWaitUntil:
+    visible:
+      id: "android:id/button1"
+    timeout: 300000
+- takeScreenshot: 05b-system-updater
+- tapOn:
+    id: "android:id/button1"
+- extendedWaitUntil:
+    notVisible: "Update"
+    timeout: 240000
+- extendedWaitUntil:
+    visible: "Launch"
+    timeout: 60000
+- takeScreenshot: 05c-updated

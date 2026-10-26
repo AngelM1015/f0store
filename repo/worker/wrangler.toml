@@ -1,0 +1,13 @@
+# f0store-repo: the F0Store repository (F-Droid format) in R2, served at https://axi0.tech/f0store/repo/*
+name = "f0store-repo"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = false
+routes = [{ pattern = "axi0.tech/f0store/repo/*", zone_name = "axi0.tech" }]
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "f0store-repo"
+
+[observability]
+enabled = false

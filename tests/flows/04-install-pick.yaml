@@ -1,0 +1,27 @@
+# Install a pick from the shelf: Open Camera (GPL-3.0-or-later), through the system installer dialog.
+appId: tech.axi0.f0store
+---
+- launchApp
+- extendedWaitUntil:
+    visible: "axi0 picks"
+    timeout: 60000
+- scrollUntilVisible:
+    element:
+      text: "Open Camera"
+    direction: DOWN
+    timeout: 120000
+- tapOn: "Open Camera"
+- waitForAnimationToEnd
+- takeScreenshot: 04a-pick-page
+- tapOn: "Install"
+- extendedWaitUntil:
+    visible:
+      id: "android:id/button1"
+    timeout: 300000
+- takeScreenshot: 04b-system-installer
+- tapOn:
+    id: "android:id/button1"
+- extendedWaitUntil:
+    visible: "Launch"
+    timeout: 240000
+- takeScreenshot: 04c-pick-installed

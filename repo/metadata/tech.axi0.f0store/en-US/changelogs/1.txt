@@ -1,0 +1,2 @@
+F0Store 0.1.0, the first release: F-Droid, IzzyOnDroid and the F0Store repository ready from the first start,
+the axi0 picks shelf, axi0 colours with Material You, download statistics off by default. Based on Droid-ify 0.7.8.

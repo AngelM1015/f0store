@@ -1,0 +1,21 @@
+# Search: from the picks shelf a search covers every app.
+appId: tech.axi0.f0store
+---
+- launchApp
+- extendedWaitUntil:
+    visible: "axi0 picks"
+    timeout: 60000
+- tapOn: "Search"
+- inputText: "Binary Eye"
+- extendedWaitUntil:
+    visible:
+      text: "Binary Eye"
+      index: 1
+    timeout: 60000
+- hideKeyboard
+- takeScreenshot: 03a-search-results
+- tapOn:
+    text: "Binary Eye"
+    index: 1
+- waitForAnimationToEnd
+- takeScreenshot: 03b-app-page-licence

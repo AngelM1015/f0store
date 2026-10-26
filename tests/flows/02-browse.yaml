@@ -1,0 +1,17 @@
+# Browse: the section list (picks, all apps, categories, repositories), all apps, the Installed tab.
+appId: tech.axi0.f0store
+---
+- launchApp
+- extendedWaitUntil:
+    visible: "axi0 picks"
+    timeout: 60000
+- tapOn: "axi0 picks"
+- takeScreenshot: 02a-sections
+- tapOn: "All apps"
+- waitForAnimationToEnd
+- takeScreenshot: 02b-all-apps
+- scroll
+- takeScreenshot: 02c-all-apps-scrolled
+- tapOn: "Installed"
+- waitForAnimationToEnd
+- takeScreenshot: 02d-installed-tab

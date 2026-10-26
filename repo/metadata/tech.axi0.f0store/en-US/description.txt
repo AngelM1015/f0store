@@ -1,0 +1,9 @@
+F0Store installs and updates free and open-source Android apps. It comes with the two big community repositories
+in the F-Droid format and with ours, and with the "axi0 picks" shelf: one free app for each everyday Google app.
+
+* FOSS only: every app is shown with its own licence and with the anti-features its repository marks.
+* No account, no analytics, no advertising library.
+* Background updates, Material You colours, light and dark.
+* Add any other repository in the F-Droid format by its link or QR code.
+
+F0Store is based on Droid-ify (GPL-3.0); its source is at https://github.com/AngelM1015/f0store

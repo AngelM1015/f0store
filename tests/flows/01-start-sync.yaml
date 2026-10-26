@@ -1,0 +1,11 @@
+# First start: F0Store syncs F-Droid, IzzyOnDroid and the F0Store repository; the axi0 picks shelf fills.
+appId: tech.axi0.f0store
+---
+- launchApp
+- takeScreenshot: 01a-first-start
+- extendedWaitUntil:
+    visible:
+      text: ".*(Aegis|AntennaPod|Auxio|Binary Eye|Breezy|Catima|CoMaps|Fennec|Fossify|HeliBoard|KeePassDX|Markor|Material Files|NewPipe|NotallyX|Open Camera|OpenTracks|Syncthing|Thunderbird|Translate You).*"
+    timeout: 900000
+- assertVisible: "axi0 picks"
+- takeScreenshot: 01b-picks-shelf
