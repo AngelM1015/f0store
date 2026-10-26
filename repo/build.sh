@@ -10,11 +10,10 @@ WANT=F6C7C97F6DB494B837FB2633FA8F744DB935E8D5DAC65BBFC79E4855CD031205
 LIVE=https://axi0.tech/f0store/repo
 mkdir -p "$work/repo" "$work/metadata" && cd "$work"
 umask 077
-printf %s "$REPO_P12_B64" | base64 -d > in.p12
+printf %s "$REPO_P12_B64" | base64 -d > keystore.p12
 KS_PASS=$(printf %s "$REPO_PASS" | tr -d '\r\n'); export KS_PASS
-openssl pkcs12 -legacy -in in.p12 -passin env:KS_PASS -nodes 2>/dev/null \
-  | openssl pkcs12 -export -name f0store-repo -passout env:KS_PASS -out keystore.p12
-rm -f in.p12
+keytool -list -storetype PKCS12 -keystore keystore.p12 -storepass:env KS_PASS -alias f0store-repo >/dev/null \
+  || { echo "keytool cannot read the repository keystore" >&2; exit 1; }
 umask 022
 # What the live repository lists stays listed (older F0Store versions remain installable and verifiable).
 if curl -fsS "$LIVE/index-v1.json" -o live-v1.json 2>/dev/null; then

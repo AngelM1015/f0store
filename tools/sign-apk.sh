@@ -9,12 +9,16 @@ bt=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
 tmp=$(mktemp -d); trap 'rm -rf "$tmp"' EXIT; chmod 700 "$tmp"
 printf %s "$P12_B64" | base64 -d > "$tmp/in.p12"
 KS_PASS=$(printf %s "$P12_PASS" | tr -d '\r\n'); export KS_PASS
-# The key was exported with legacy PKCS#12 ciphers; re-wrap it with the modern defaults every JDK reads.
-openssl pkcs12 -legacy -in "$tmp/in.p12" -passin env:KS_PASS -nodes 2>/dev/null \
-  | openssl pkcs12 -export -name f0store -passout env:KS_PASS -out "$tmp/apk.p12"
+# Java reads the PKCS#12 as exported (the classic PBE ciphers keytool itself used); re-wrap it with OpenSSL only if not.
+ks="$tmp/in.p12"
+if ! keytool -list -storetype PKCS12 -keystore "$ks" -storepass:env KS_PASS -alias f0store >/dev/null 2>&1; then
+  echo "keytool cannot read the keystore as exported; re-wrapping with openssl" >&2
+  openssl pkcs12 -legacy -in "$ks" -passin env:KS_PASS -nodes | openssl pkcs12 -export -name f0store -passout env:KS_PASS -out "$tmp/apk.p12"
+  ks="$tmp/apk.p12"
+fi
 mkdir -p "$(dirname "$out")"
 "$bt/zipalign" -c -p 4 "$in" >/dev/null 2>&1 || { "$bt/zipalign" -p -f 4 "$in" "$tmp/aligned.apk"; in="$tmp/aligned.apk"; }
-"$bt/apksigner" sign --ks "$tmp/apk.p12" --ks-type PKCS12 --ks-pass env:KS_PASS --key-pass env:KS_PASS \
+"$bt/apksigner" sign --ks "$ks" --ks-type PKCS12 --ks-pass env:KS_PASS --key-pass env:KS_PASS \
   --ks-key-alias f0store --out "$out" "$in"
 got=$("$bt/apksigner" verify --print-certs "$out" | grep -m1 'certificate SHA-256 digest' | awk '{print toupper($NF)}')
 [ "$got" = "$WANT" ] || { echo "signed by $got, not the F0Store key" >&2; exit 1; }
