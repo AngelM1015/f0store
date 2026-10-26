@@ -23,7 +23,10 @@ live = sys.argv[1]
 for pkgs in json.load(open('live-v1.json')).get('packages', {}).values():
     for p in pkgs:
         name = p['apkName']
-        urllib.request.urlretrieve(f'{live}/{name}', f'repo/{name}')
+        # Cloudflare's edge refuses Python's default user agent (403): name ours.
+        req = urllib.request.Request(f'{live}/{name}', headers={'User-Agent': 'f0store-publish/1'})
+        with urllib.request.urlopen(req, timeout=300) as r, open(f'repo/{name}', 'wb') as fh:
+            fh.write(r.read())
         print('kept', name)
 EOF
 fi
