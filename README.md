@@ -1,90 +1,70 @@
-> [!Warning]
-> **Free and Open-Source Android is under threat.**
->
-> Google will turn Android into a locked-down platform, restricting your essential freedom to install apps of your choice. Make your voice heard
->
-> [**Keep Android Open**](https://keepandroidopen.org/).
+# F0Store
 
-<div align="center">
+F0Store is axi0's store of free and open-source Android apps. It installs and updates apps from repositories in the
+F-Droid format: the two big community repositories and our own, ready from the first start, plus the
+"axi0 picks" shelf: one free app for each everyday Google app ([PICKS.md](PICKS.md)).
 
-<img width="" src="assets/banner.svg" alt="Droid-ify" align="center">
+FOSS only: every app in the repositories F0Store ships with is free and open-source software, shown with its own
+licence and with the anti-features its repository marks. F0Store never offers apps copied out of Google Play.
 
-</div>
+F0Store runs on Android 6.0 and newer. It will be the preinstalled store of FluxOS for phones.
 
-<!-- [![GitHub downloads](https://img.shields.io/github/downloads/Iamlooker/Droid-ify/total.svg?color=%236f9645&style=for-the-badge)](https://github.com/Iamlooker/Droid-ify/releases/) -->
-<!-- [![GitHub](https://img.shields.io/github/v/release/Iamlooker/Droid-ify?display_name=tag&color=%23d97706&style=for-the-badge)](https://github.com/Iamlooker/Droid-ify/releases/latest) -->
-<!-- [![IzzyOnDroid](https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.looker.droidify&label=IzzyOnDroid&style=for-the-badge)](https://apt.izzysoft.de/fdroid/index/apk/com.looker.droidify) -->
-<!-- [![F-Droid](https://img.shields.io/f-droid/v/com.looker.droidify?color=%23ea9010&style=for-the-badge)](https://f-droid.org/packages/com.looker.droidify) -->
-<!-- [![GitHub stars](https://img.shields.io/github/stars/Iamlooker/Droid-ify?color=%2359a14f&style=for-the-badge)](https://github.com/Iamlooker/Droid-ify/stargazers) -->
+Download: https://axi0.tech/f0store (APK with its SHA-256 and signing certificate), or add our repository to any
+F-Droid-compatible client: `https://axi0.tech/f0store/repo` with the fingerprint below.
 
-* Browse and install apps from F-Droid repositories
-* Automatic app updates in the background
-* Multiple installation methods (Session, Root, Shizuku)
-* Add custom repositories with one tap
-* Browse offline after initial sync
+## Based on Droid-ify
 
-### Installation
+F0Store is a modified version of [Droid-ify](https://github.com/Droid-ify/client) 0.7.8 (GPL-3.0), which is based
+on [Foxy Droid](https://github.com/kitsunyan/foxy-droid). The full history of both is kept in this repository. What
+we changed, and when, is in [NOTICE.md](NOTICE.md). Thank you to the Droid-ify and Foxy Droid authors.
 
-[<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" height="80" alt="Get it on IzzyOnDroid">](https://apt.izzysoft.de/packages/com.looker.droidify)
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" height="80" alt="Get it on F-Droid">](https://f-droid.org/packages/com.looker.droidify/)
-[<img src="https://raw.githubusercontent.com/vadret/android/master/assets/get-github.png" height="80" alt="Get it on GitHub">](https://github.com/Iamlooker/Droid-ify/releases/latest)
-[<img src="https://unifiedpush.org/img/codeberg-badge.png" height=80 alt="Get it on Codeberg">](https://codeberg.org/droidify/client/releases/latest)
+## Repositories it ships with
 
-**Signature:**
+| Repository | Address | Enabled |
+|---|---|---|
+| F-Droid | `https://f-droid.org/repo` | yes |
+| IzzyOnDroid | `https://apt.izzysoft.de/fdroid/repo` | yes |
+| F0Store (ours) | `https://axi0.tech/f0store/repo` | yes |
+| F-Droid Archive | `https://f-droid.org/archive` | off |
 
-```
-ED:88:59:C5:5A:F3:11:16:26:58:B9:4A:F9:82:B9:F0:91:DC:D2:76:28:D4:DE:34:86:D1:21:7E:BF:3C:99:35
-```
+Any other repository can be added by its link or QR code, as in Droid-ify.
 
-> [!Note]
-> Signature for versions from F-Droid might be different
+## What the app sends, and to whom
 
-#### Manual Building
+- To each enabled repository (or to one of the mirrors that repository lists): ordinary HTTPS requests for
+  its signed index, app icons and screenshots, and the APK files you choose to install. Like any web request these
+  carry your IP address and the HTTP client's default user agent. No account, no identifier, no list of your apps.
+- To IzzyOnDroid, with the setting "reproducible builds" on (the default): its public reproducible-build log, so
+  F0Store can show which of its apps are verified builds.
+- Download statistics (IzzyOnDroid's public counts, `dlstats.izzyondroid.org`) are OFF in F0Store unless you turn
+  them on in the settings.
+- No analytics, no crash reporting, no advertising library. Links you tap (source code, licence, donation, the
+  privacy-report buttons) open in your browser.
 
-```sh
-git clone https://github.com/Droid-ify/client droidify
-cd droidify
-./gradlew assembleRelease
-```
+## Keys
 
-### Contribute
+| What | SHA-256 of the signing certificate |
+|---|---|
+| F0Store APK | `75920807E60E2896C2F9DD3799FA3C26BAAC7A66C0E72311E94EF469C315DE31` |
+| F0Store repository index | `F6C7C97F6DB494B837FB2633FA8F744DB935E8D5DAC65BBFC79E4855CD031205` |
 
-Code contribution: [CONTRIBUTING.md](CONTRIBUTING.md)
+Check an APK with `apksigner verify --print-certs F0Store-<version>.apk`.
 
-Translation: [Weblate](https://hosted.weblate.org/engage/droidify)
+## Build
 
-## Source Code
+Builds, signing, emulator tests and the repository publish all run in GitHub Actions (`.github/workflows/f0store.yml`):
 
-Currently source code exists in both [GitHub](https://github.com/Droid-ify/client/issues) and [Codeberg](https://codeberg.org/droidify/client/pulls), although GitHub is just a mirror for the Codeberg repo now.
+1. `python3 tools/picks.py --check` (the picks list in the app matches `docs/picks.json`),
+2. `./gradlew assembleRelease`, signed with the F0Store key held in the repository's Actions secrets,
+3. an Android emulator test (`tests/emulator.sh`, Maestro flows in `tests/flows/`): install F0Store, sync the three
+   repositories, browse, search, install a pick, update an app; screenshots are kept as a workflow artifact,
+4. on a manual run with `publish`, the signed APK goes into our repository (`repo/`, built with fdroidserver,
+   index signed with the repository key) at `https://axi0.tech/f0store/repo`.
 
-Releases will only be created on GitHub until the migration finishes.
+Locally: `./gradlew assembleDebug` with JDK 17 and the Android SDK, as for Droid-ify.
 
-**When is migration considered finished?**
+## Licence
 
-No actual way to say that but I will try to pick the best possible time for migration of each component and call it done when it seems good enough.
-
-### Links
-
-Issue Tracker: [GitHub](https://github.com/Droid-ify/client/issues)
-
-Pull Requests: [Codeberg](https://codeberg.org/droidify/client/pulls)
-
-### License
-
-```
-Droid-ify
-
-Copyright (C) 2026 LooKeR
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-```
-
-</div>
+GPL-3.0, see [LICENSE](LICENSE). Copyright of the Droid-ify and Foxy Droid code stays with their authors; the
+changes listed in NOTICE.md are Copyright 2026 axi0, under the same licence. App metadata shown inside F0Store comes
+from each repository under that repository's and that app's own licences ([TERMS.md](TERMS.md)).

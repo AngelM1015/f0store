@@ -46,21 +46,9 @@ data class CustomButton(
                 icon = CustomButtonIcon.PRIVACY,
             ),
             CustomButton(
-                id = "playstore",
-                label = "Play Store",
-                urlTemplate = "https://play.google.com/store/apps/details?id={{package_name}}",
-                icon = CustomButtonIcon.STORE,
-            ),
-            CustomButton(
                 id = "alternativeto",
                 label = "AlternativeTo",
                 urlTemplate = "https://alternativeto.net/browse/search/?q={{app_name}}",
-                icon = CustomButtonIcon.SEARCH,
-            ),
-            CustomButton(
-                id = "apkmirror",
-                label = "APKMirror",
-                urlTemplate = "https://www.apkmirror.com/?post_type=app_release&searchtype=apk&s={{package_name}}",
                 icon = CustomButtonIcon.SEARCH,
             ),
         )

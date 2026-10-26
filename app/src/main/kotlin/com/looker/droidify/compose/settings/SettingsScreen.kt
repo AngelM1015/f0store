@@ -57,6 +57,9 @@ private const val FOXY_DROID_TITLE = "FoxyDroid"
 private const val FOXY_DROID_URL = "https://github.com/kitsunyan/foxy-droid"
 private const val DROID_IFY_TITLE = "Droid-ify"
 private const val DROID_IFY_URL = "https://github.com/Droid-ify/client"
+private const val F0STORE_TITLE = "F0Store"
+private const val F0STORE_URL = "https://github.com/AngelM1015/f0store"
+private const val DROID_IFY_CREDIT = "F0Store is based on Droid-ify (GPL-3.0)"
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -389,8 +392,16 @@ fun SettingsScreen(
                         .versionName!!
                 }
                 ActionSettingItem(
+                    title = F0STORE_TITLE,
+                    description = "$currentVersion, GPL-3.0",
+                    onClick = { context.openLink(F0STORE_URL) },
+                )
+            }
+
+            item {
+                ActionSettingItem(
                     title = DROID_IFY_TITLE,
-                    description = currentVersion,
+                    description = DROID_IFY_CREDIT,
                     onClick = { context.openLink(DROID_IFY_URL) },
                 )
             }

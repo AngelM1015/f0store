@@ -1,0 +1,280 @@
+{
+ "checked": "2026-10-25",
+ "index_sha256": "b44f2ab94713dadfeb2cf3e55c21fb147d20b43a1cbef140cb06f4954841bd50",
+ "picks": [
+  {
+   "instead_of": "Gmail",
+   "role": "Email",
+   "name": "Thunderbird",
+   "package": "net.thunderbird.android",
+   "license": "Apache-2.0",
+   "antiFeatures": [],
+   "source": "https://github.com/thunderbird/thunderbird-android",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Chrome",
+   "role": "Web browser",
+   "name": "Fennec F-Droid",
+   "package": "org.mozilla.fennec_fdroid",
+   "license": "MPL-2.0",
+   "antiFeatures": [
+    "Tracking"
+   ],
+   "source": "https://hg.mozilla.org/mozilla-central/file/tip/mobile/android",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Maps",
+   "role": "Offline maps and navigation",
+   "name": "CoMaps",
+   "package": "app.comaps.fdroid",
+   "license": "Apache-2.0",
+   "antiFeatures": [],
+   "source": "https://codeberg.org/comaps/comaps",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Photos",
+   "role": "Photo and video gallery",
+   "name": "Fossify Gallery",
+   "package": "org.fossify.gallery",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/FossifyOrg/Gallery",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Keep",
+   "role": "Notes and lists",
+   "name": "NotallyX",
+   "package": "com.philkes.notallyx",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/Crustack/NotallyX",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Calendar",
+   "role": "Calendar",
+   "name": "Fossify Calendar",
+   "package": "org.fossify.calendar",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/FossifyOrg/Calendar",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Contacts",
+   "role": "Contacts",
+   "name": "Fossify Contacts",
+   "package": "org.fossify.contacts",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/FossifyOrg/Contacts",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Phone",
+   "role": "Phone calls",
+   "name": "Fossify Phone",
+   "package": "org.fossify.phone",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/FossifyOrg/Phone",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Messages",
+   "role": "Text messages",
+   "name": "Fossify Messages",
+   "package": "org.fossify.messages",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/FossifyOrg/Messages",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Camera",
+   "role": "Camera",
+   "name": "Open Camera",
+   "package": "net.sourceforge.opencamera",
+   "license": "GPL-3.0-or-later",
+   "antiFeatures": [],
+   "source": "https://sourceforge.net/p/opencamera/code",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Clock",
+   "role": "Alarms, timers and clock",
+   "name": "Fossify Clock",
+   "package": "org.fossify.clock",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/FossifyOrg/Clock",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Calculator",
+   "role": "Calculator",
+   "name": "Fossify Calculator",
+   "package": "org.fossify.math",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/FossifyOrg/Calculator",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Files",
+   "role": "File manager",
+   "name": "Material Files",
+   "package": "me.zhanghai.android.files",
+   "license": "GPL-3.0-or-later",
+   "antiFeatures": [],
+   "source": "https://github.com/zhanghai/MaterialFiles",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "YouTube",
+   "role": "Video streams without an account",
+   "name": "NewPipe",
+   "package": "org.schabi.newpipe",
+   "license": "GPL-3.0-or-later",
+   "antiFeatures": [
+    "NonFreeNet"
+   ],
+   "source": "https://github.com/TeamNewPipe/NewPipe",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "YouTube Music",
+   "role": "Music player for your own files",
+   "name": "Auxio",
+   "package": "org.oxycblt.auxio",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/OxygenCobalt/Auxio",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Gboard",
+   "role": "Keyboard",
+   "name": "HeliBoard",
+   "package": "helium314.keyboard",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/HeliBorg/HeliBoard",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Translate",
+   "role": "Translation with the engine you choose",
+   "name": "Translate You",
+   "package": "com.bnyro.translate",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/you-apps/TranslateYou",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Authenticator",
+   "role": "Two-factor codes",
+   "name": "Aegis Authenticator",
+   "package": "com.beemdevelopment.aegis",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/beemdevelopment/Aegis",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Podcasts",
+   "role": "Podcasts",
+   "name": "AntennaPod",
+   "package": "de.danoeh.antennapod",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/AntennaPod/AntennaPod",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Wallet",
+   "role": "Loyalty and membership cards",
+   "name": "Catima",
+   "package": "me.hackerchick.catima",
+   "license": "GPL-3.0-or-later",
+   "antiFeatures": [],
+   "source": "https://github.com/CatimaLoyalty/Android",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Lens",
+   "role": "Barcode and QR code scanner",
+   "name": "Binary Eye",
+   "package": "de.markusfisch.android.binaryeye",
+   "license": "MIT",
+   "antiFeatures": [],
+   "source": "https://github.com/markusfisch/BinaryEye",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Password Manager",
+   "role": "Passwords and passkeys",
+   "name": "KeePassDX",
+   "package": "com.kunzisoft.keepass.libre",
+   "license": "GPL-3.0-or-later",
+   "antiFeatures": [],
+   "source": "https://github.com/Kunzisoft/KeePassDX",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Recorder",
+   "role": "Voice recorder",
+   "name": "Fossify Voice Recorder",
+   "package": "org.fossify.voicerecorder",
+   "license": "GPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/FossifyOrg/Voice-Recorder",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Fit",
+   "role": "Sport and activity tracks",
+   "name": "OpenTracks",
+   "package": "de.dennisguse.opentracks",
+   "license": "Apache-2.0",
+   "antiFeatures": [],
+   "source": "https://codeberg.org/OpenTracksApp/OpenTracks",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Weather",
+   "role": "Weather",
+   "name": "Breezy Weather",
+   "package": "org.breezyweather",
+   "license": "LGPL-3.0-only",
+   "antiFeatures": [],
+   "source": "https://github.com/breezy-weather/breezy-weather",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Docs",
+   "role": "Text and Markdown documents",
+   "name": "Markor",
+   "package": "net.gsantner.markor",
+   "license": "Apache-2.0",
+   "antiFeatures": [],
+   "source": "https://github.com/gsantner/markor",
+   "repo": "F-Droid"
+  },
+  {
+   "instead_of": "Drive",
+   "role": "Sync folders between your own devices",
+   "name": "Syncthing-Fork",
+   "package": "com.github.catfriend1.syncthingfork",
+   "license": "MPL-2.0",
+   "antiFeatures": [],
+   "source": "https://github.com/researchxxl/syncthing-android",
+   "repo": "F-Droid"
+  }
+ ]
+}

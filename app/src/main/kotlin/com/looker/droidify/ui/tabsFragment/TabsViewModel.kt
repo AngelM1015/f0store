@@ -24,7 +24,7 @@ class TabsViewModel @Inject constructor(
 ) : ViewModel() {
 
     val currentSection =
-        savedStateHandle.getStateFlow<ProductItem.Section>(STATE_SECTION, ProductItem.Section.All)
+        savedStateHandle.getStateFlow<ProductItem.Section>(STATE_SECTION, ProductItem.Section.Picks)
 
     val sortOrder = settingsRepository
         .get { sortOrder }
@@ -40,6 +40,7 @@ class TabsViewModel @Inject constructor(
     ) { categories, repos ->
         if (repos.isEmpty()) setSection(ProductItem.Section.All)
         buildList {
+            add(ProductItem.Section.Picks)
             add(ProductItem.Section.All)
             categories.sorted().mapTo(this, ProductItem.Section::Category)
             repos.mapTo(this) { ProductItem.Section.Repository(it.id, it.name) }
@@ -57,7 +58,8 @@ class TabsViewModel @Inject constructor(
         showSections,
     ) { currentSection, isSearchActionItemExpanded, showSections ->
         when {
-            currentSection != ProductItem.Section.All -> BackAction.ProductAll
+            currentSection != ProductItem.Section.All &&
+                currentSection != ProductItem.Section.Picks -> BackAction.ProductAll
             isSearchActionItemExpanded -> BackAction.CollapseSearchView
             showSections -> BackAction.HideSections
             else -> BackAction.None

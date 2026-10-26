@@ -23,6 +23,10 @@ data class ProductItem(
         @Parcelize
         data object All : Section
 
+        /** axi0 picks: the register in [Picks]; the home shelf of the Available tab. */
+        @Parcelize
+        data object Picks : Section
+
         @Parcelize
         data class Category(val name: String) : Section
 

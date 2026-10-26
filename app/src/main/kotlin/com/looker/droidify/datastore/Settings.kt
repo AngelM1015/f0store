@@ -31,7 +31,7 @@ data class Settings(
     val unstableUpdate: Boolean = false,
     val ignoreSignature: Boolean = false,
     val theme: Theme = Theme.SYSTEM,
-    val dynamicTheme: Boolean = false,
+    val dynamicTheme: Boolean = true,
     val installerType: InstallerType = InstallerType.Default,
     val legacyInstallerComponent: LegacyInstallerComponent? = null,
     val autoUpdate: Boolean = false,
@@ -48,7 +48,7 @@ data class Settings(
     val homeScreenSwiping: Boolean = true,
     val enabledRepoIds: Set<Int> = emptySet(),
     val deleteApkOnInstall: Boolean = false,
-    val dlStatsEnabled: Boolean = true,
+    val dlStatsEnabled: Boolean = false,
     val rbLogsEnabled: Boolean = true,
 )
 

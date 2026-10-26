@@ -232,7 +232,7 @@ class PreferenceSettingsRepository(
         val unstableUpdate = preferences[UNSTABLE_UPDATES] ?: false
         val ignoreSignature = preferences[IGNORE_SIGNATURE] ?: false
         val theme = Theme.valueOf(preferences[THEME] ?: Theme.SYSTEM.name)
-        val dynamicTheme = preferences[DYNAMIC_THEME] ?: false
+        val dynamicTheme = preferences[DYNAMIC_THEME] ?: true
         val autoUpdate = preferences[AUTO_UPDATE] ?: false
         val autoSync = AutoSync.valueOf(preferences[AUTO_SYNC] ?: AutoSync.WIFI_ONLY.name)
         val sortOrder = SortOrder.valueOf(preferences[SORT_ORDER] ?: SortOrder.UPDATED.name)
@@ -250,7 +250,7 @@ class PreferenceSettingsRepository(
         val enabledRepoIds =
             preferences[ENABLED_REPO_IDS]?.mapNotNull { it.toIntOrNull() }?.toSet() ?: emptySet()
         val deleteApkOnInstall = preferences[DELETE_APK_ON_INSTALL] ?: false
-        val downloadStatisticsEnabled = preferences[DOWNLOAD_STATISTICS_ENABLED] ?: true
+        val downloadStatisticsEnabled = preferences[DOWNLOAD_STATISTICS_ENABLED] ?: false
         val reproducibilityLogsEnabled = preferences[REPRODUCIBILITY_LOGS_ENABLED] ?: true
 
         return Settings(

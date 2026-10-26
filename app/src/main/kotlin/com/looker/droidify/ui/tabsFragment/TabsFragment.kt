@@ -446,7 +446,7 @@ class TabsFragment : ScreenFragment() {
     private fun performOnBackPressed() {
         when (viewModel.backAction.value) {
             BackAction.ProductAll -> {
-                viewModel.setSection(ProductItem.Section.All)
+                viewModel.setSection(ProductItem.Section.Picks)
             }
 
             BackAction.CollapseSearchView -> {
@@ -507,6 +507,7 @@ class TabsFragment : ScreenFragment() {
     private fun updateSection(section: ProductItem.Section) {
         layout?.sectionName?.text = when (section) {
             is ProductItem.Section.All -> getString(stringRes.all_applications)
+            is ProductItem.Section.Picks -> getString(stringRes.axi0_picks)
             is ProductItem.Section.Category -> section.name
             is ProductItem.Section.Repository -> section.name
         }
@@ -730,6 +731,10 @@ class TabsFragment : ScreenFragment() {
             holder.title.text = when (section) {
                 is ProductItem.Section.All -> holder.itemView.resources.getString(
                     stringRes.all_applications,
+                )
+
+                is ProductItem.Section.Picks -> holder.itemView.resources.getString(
+                    stringRes.axi0_picks,
                 )
 
                 is ProductItem.Section.Category -> section.name

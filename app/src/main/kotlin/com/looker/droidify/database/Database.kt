@@ -15,6 +15,7 @@ import com.looker.droidify.database.table.Table
 import com.looker.droidify.datastore.model.SortOrder
 import com.looker.droidify.model.InstalledItem
 import com.looker.droidify.model.Product
+import com.looker.droidify.model.Picks
 import com.looker.droidify.model.ProductItem
 import com.looker.droidify.model.Repository
 import com.looker.droidify.utility.common.extension.Json
@@ -629,6 +630,10 @@ object Database {
             } else if (section is ProductItem.Section.Repository) {
                 builder += "AND product.${Schema.Product.ROW_REPOSITORY_ID} = ?"
                 builder %= section.id.toString()
+            } else if (section is ProductItem.Section.Picks && searchQuery.isEmpty()) {
+                // A search from the picks shelf searches every app, not only the picks.
+                builder += "AND product.${Schema.Product.ROW_PACKAGE_NAME} IN (${Picks.packageNames.joinToString { "?" }})"
+                builder %= Picks.packageNames
             }
 
             if (searchQuery.isNotEmpty()) {
