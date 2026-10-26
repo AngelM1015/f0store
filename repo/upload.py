@@ -8,6 +8,8 @@ import os, sys, urllib.error, urllib.request
 
 BASE = os.environ.get('F0STORE_REPO', 'https://axi0.tech/f0store/repo/')
 SECRET = (os.environ.get('UPLOAD_SECRET') or open(os.path.expanduser('~/.config/axi0/f0store-release/upload.secret')).read()).strip()
+# fdroidserver's own web page and build status are not part of what clients read: not published.
+SKIP = ('index.html', 'index.css', 'index.png', 'status/')
 LAST = ['index-v1.json', 'index-v1.jar', 'index-v2.json', 'entry.json', 'entry.jar']
 UA = {'User-Agent': 'f0store-publish/1'}
 
@@ -40,7 +42,9 @@ def main(root):
     for d, _, names in os.walk(root):
         for n in names:
             p = os.path.join(d, n)
-            files.append((os.path.relpath(p, root).replace(os.sep, '/'), p))
+            key = os.path.relpath(p, root).replace(os.sep, '/')
+            if not key.startswith(SKIP):
+                files.append((key, p))
     files.sort(key=lambda kp: (kp[0] in LAST and 1 + LAST.index(kp[0]) or 0, kp[0]))
     sent = 0
     for key, path in files:

@@ -13,7 +13,7 @@ const INDEX = /^(entry\.(jar|json)|index-v1\.(jar|json)|index-v2\.json|index\.(j
 function keyOf(url) {
   let k;
   try { k = decodeURIComponent(url.pathname.slice(PREFIX.length)); } catch { return null; }
-  if (!/^[A-Za-z0-9._/-]{1,200}$/.test(k) || k.includes('..') || k.startsWith('/') || k.endsWith('/')) return null;
+  if (!/^[A-Za-z0-9._/=-]{1,200}$/.test(k) || k.includes('..') || k.startsWith('/') || k.endsWith('/')) return null;
   return k;
 }
 function typeOf(k) {
