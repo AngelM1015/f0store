@@ -4,7 +4,7 @@
 # metadata and lets fdroidserver build index-v1 and index-v2 and sign them (entry.jar, index-v1.jar) with the
 # repository key from the environment (REPO_P12_B64, REPO_PASS). Checks the index signer is the F0Store repo key.
 set -euo pipefail
-apk=$1 code=$2 work=$3
+apk=$(cd "$(dirname "$1")" && pwd)/$(basename "$1") code=$2 work=$3   # absolute: we cd into the work dir
 here=$(cd "$(dirname "$0")" && pwd)
 WANT=F6C7C97F6DB494B837FB2633FA8F744DB935E8D5DAC65BBFC79E4855CD031205
 LIVE=https://axi0.tech/f0store/repo
