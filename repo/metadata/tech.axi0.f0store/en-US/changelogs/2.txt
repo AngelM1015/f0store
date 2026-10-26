@@ -1,0 +1,1 @@
+F0Store 0.1.1: every app page opens with its links section showing, so the licence is visible without a tap.

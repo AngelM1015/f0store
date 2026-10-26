@@ -127,3 +127,45 @@ jobs:
         with:
           name: repo
           path: ${{ runner.temp }}/f0repo/repo/
+
+  selfupdate:
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Install Maestro (test driver, not shipped)
+        env:
+          MAESTRO_VERSION: 2.11.0
+        run: |
+          curl -fsSL https://get.maestro.mobile.dev | bash
+          echo "$HOME/.maestro/bin" >> "$GITHUB_PATH"
+      - name: The previous F0Store from the live repository updates itself
+        uses: reactivecircus/android-emulator-runner@v2
+        env:
+          MAESTRO_CLI_NO_ANALYTICS: 1
+          MAESTRO_CLI_ANALYSIS_NOTIFICATION_DISABLED: true
+        with:
+          api-level: 34
+          target: default
+          arch: x86_64
+          profile: pixel_6
+          ram-size: 4096M
+          disk-size: 6000M
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -camera-front none
+          script: bash tests/selfupdate.sh screenshots-selfupdate
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screenshots-selfupdate
+          path: screenshots-selfupdate/

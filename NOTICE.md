@@ -20,3 +20,7 @@ ff1453ed957f), modified by axi0 starting on 2026-10-25. The upstream history is 
 - The Play Store and APKMirror shortcut-button presets are removed (F0Store never points at Play builds).
 - Credits in the settings: F0Store's source first, then Droid-ify and Foxy Droid.
 - Upstream's CI, release script, issue templates, store listing and README artwork are replaced by ours.
+
+2026-10-26, F0Store 0.1.1:
+- App pages open with the Links section expanded, so each app's licence shows without a tap.
+- The axi0 picks list starts on the picks section (upstream's list default was All apps).

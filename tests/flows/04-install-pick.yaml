@@ -25,3 +25,9 @@ appId: tech.axi0.f0store
     visible: "Launch"
     timeout: 240000
 - takeScreenshot: 04c-pick-installed
+- scrollUntilVisible:
+    element:
+      text: ".*GPL-3\\.0.*"
+    direction: DOWN
+    timeout: 30000
+- takeScreenshot: 04d-pick-licence

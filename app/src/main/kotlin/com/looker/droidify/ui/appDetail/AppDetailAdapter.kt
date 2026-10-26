@@ -708,7 +708,8 @@ class AppDetailAdapter(private val callbacks: Callbacks) :
     }
 
     private val items = mutableListOf<Item>()
-    private val expanded = mutableSetOf<ExpandType>()
+    // F0Store: the Links section (licence first) starts open, so every app page shows its licence.
+    private val expanded = mutableSetOf(ExpandType.LINKS)
     private var product: Product? = null
     private var installedItem: InstalledItem? = null
     private var customButtons: List<CustomButton> = emptyList()
