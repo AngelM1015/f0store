@@ -149,7 +149,7 @@ def main():
   <h2 id="picks">axi0 picks</h2>
   <p>The first shelf in F0Store: one free app for each everyday Google app, each one checked for its licence and its repository's marks on {E(picks["checked"])}. Names link to each app's own source code.</p>
   <div class="wrap">
-    <table>
+    <table class="picks">
       <caption>{len(picks["picks"])} picks, with the licence each one is published under</caption>
       <thead><tr><th scope="col">Instead of</th><th scope="col">Pick</th><th scope="col">What it does</th><th scope="col">Licence</th></tr></thead>
       <tbody>

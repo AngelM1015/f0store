@@ -10,6 +10,7 @@ out=$(mkdir -p "$2" && cd "$2" && pwd)
 pkg=tech.axi0.f0store
 fail=0
 tmp=$(mktemp -d)
+touch "$tmp/stamp"
 shot() { adb exec-out screencap -p > "$out/$1.png" 2>/dev/null || true; }
 dump() { adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1 && adb pull /sdcard/ui.xml "$out/$1.xml" >/dev/null 2>&1 || true; }
 vc() { adb shell dumpsys package "$1" | grep -m1 -oE 'versionCode=[0-9]+' | cut -d= -f2; }
@@ -17,6 +18,8 @@ step() {   # step <name>: run tests/flows/<name>.yaml from the screenshot dir (t
   echo "== $1"
   if (cd "$out" && maestro test "$root/tests/flows/$1.yaml"); then echo "PASS $1"; else echo "FAIL $1"; fail=1; dump "$1-fail"; fi
   shot "$1-end"
+  # Maestro writes takeScreenshot files relative to its own idea of the working dir: gather them.
+  find "$root/tests" "$HOME/.maestro" "$out" -name '0[1-5][a-z]-*.png' -newer "$tmp/stamp" -exec cp -n {} "$out/" \; 2>/dev/null || true
 }
 
 adb wait-for-device

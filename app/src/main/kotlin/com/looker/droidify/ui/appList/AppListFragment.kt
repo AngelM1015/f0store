@@ -107,6 +107,8 @@ class AppListFragment() : Fragment(), CursorOwner.Callback {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        // ViewPager2 creates this page after the tabs announced their section: start from the current one.
+        if (source.sections) (parentFragment as? TabsFragment)?.let { viewModel.setSection(it.currentSection) }
         super.onViewCreated(view, savedInstanceState)
         layoutManagerState = savedInstanceState?.getParcelableCompat(STATE_LAYOUT_MANAGER)
         mainActivity.cursorOwner.attach(

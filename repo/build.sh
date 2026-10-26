@@ -29,7 +29,8 @@ EOF
 fi
 cp "$apk" "repo/tech.axi0.f0store_${code}.apk"
 cp -R "$here/metadata/." metadata/
-mkdir -p repo/icons && cp "$here/icon.png" repo/icons/icon.png
+# Our icon wherever fdroidserver looks for repo_icon, so it never falls back to its own placeholder artwork.
+mkdir -p repo/icons && cp "$here/icon.png" repo/icons/icon.png && cp "$here/icon.png" icon.png
 cat > config.yml <<EOF
 repo_url: $LIVE
 repo_name: F0Store
@@ -53,5 +54,5 @@ got=$(keytool -printcert -jarfile repo/entry.jar | grep -m1 -E 'SHA256:' | sed '
 [ "$got" = "$WANT" ] || { echo "entry.jar signed by $got, not the F0Store repository key" >&2; exit 1; }
 echo "index signer SHA-256 $got"
 rm -f keystore.p12
-python3 -c "import json; d=json.load(open('repo/index-v2.json')); p=d['packages']['tech.axi0.f0store']; print('index-v2:', len(d['packages']), 'package(s);', 'F0Store versions:', sorted(v['manifest']['versionCode'] for v in p['versions'].values()))"
+python3 -c "import json; d=json.load(open('repo/index-v2.json')); print('repo icon:', d['repo'].get('icon')); p=d['packages']['tech.axi0.f0store']; print('index-v2:', len(d['packages']), 'package(s);', 'F0Store versions:', sorted(v['manifest']['versionCode'] for v in p['versions'].values()))"
 ls -la repo

@@ -132,6 +132,10 @@ class TabsFragment : ScreenFragment() {
 
     private var needSelectUpdates = false
 
+    /** The section the Explore tab shows now; a list page created later starts from it. */
+    internal val currentSection: ProductItem.Section
+        get() = viewModel.currentSection.value
+
     private val productFragments: Sequence<AppListFragment>
         get() = if (host == null) {
             emptySequence()

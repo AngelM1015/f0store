@@ -10,7 +10,6 @@ import com.looker.droidify.datastore.SettingsRepository
 import com.looker.droidify.datastore.get
 import com.looker.droidify.datastore.model.SortOrder
 import com.looker.droidify.model.ProductItem
-import com.looker.droidify.model.ProductItem.Section.All
 import com.looker.droidify.utility.common.extension.asStateFlow
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -35,7 +34,7 @@ class AppListViewModel
         .get { sortOrder }
         .asStateFlow(SortOrder.UPDATED)
 
-    private val sections = MutableStateFlow<ProductItem.Section>(All)
+    private val sections = MutableStateFlow<ProductItem.Section>(ProductItem.Section.Picks)
 
     val state = combine(
         skipSignatureStream,
@@ -68,7 +67,7 @@ class AppListViewModel
 }
 
 data class AppListState(
-    val sections: ProductItem.Section = All,
+    val sections: ProductItem.Section = ProductItem.Section.Picks,
     val sortOrder: SortOrder = SortOrder.UPDATED,
     val skipSignatureCheck: Boolean = false,
 ) {
