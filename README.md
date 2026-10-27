@@ -30,7 +30,8 @@ we changed, and when, is in [NOTICE.md](NOTICE.md). Thank you to the Droid-ify a
 Any other repository can be added by its link or QR code, as in Droid-ify.
 
 Apps in our repository besides F0Store itself: axi0 Photo Sync (`tech.axi0.photosync`, built in
-https://github.com/AngelM1015/axi0-photo-sync, signed with the F0Store APK key). Each app's CI puts its APK and a
+https://github.com/AngelM1015/axi0-photo-sync) and 0daylife, the Flux0S launcher (`tech.axi0.daylife`, built in
+https://github.com/AngelM1015/0daylife), both signed with the F0Store APK key. Each app's CI puts its APK and a
 `<package>.latest` line into the repository directory; the publish job here lists the newest one in the signed index.
 
 ## What the app sends, and to whom
