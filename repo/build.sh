@@ -30,7 +30,15 @@ for pkgs in json.load(open('live-v1.json')).get('packages', {}).values():
         print('kept', name)
 EOF
 fi
-cp "$apk" "repo/tech.axi0.f0store_${code}.apk"
+# A versionCode that is already live keeps its published APK: a file under a version never changes (a same-size
+# rebuild once replaced 0.1.1 here while upload.py kept the live bytes, so the index named a hash the edge never served
+# and 0.1.0 could not update itself). Shipping a new F0Store build needs a new versionCode.
+if [ -s "repo/tech.axi0.f0store_${code}.apk" ]; then
+  if cmp -s "$apk" "repo/tech.axi0.f0store_${code}.apk"; then echo "F0Store $code: this build is the live APK"
+  else echo "F0Store $code is already live: its published APK stays listed (bump versionCode to ship this build)" >&2; fi
+else
+  cp "$apk" "repo/tech.axi0.f0store_${code}.apk"
+fi
 # The other axi0 apps (one metadata file each): their own CI puts <package>_<code>.apk and <package>.latest (the APK
 # name and its SHA-256) into the live directory; the newest of each is listed here, checked against that hash.
 for y in "$here"/metadata/*.yml; do
