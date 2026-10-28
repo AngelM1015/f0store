@@ -1,0 +1,1 @@
+A visual pass: themed icons in one shape (with a built-in icon pack for apps without their own), an at-a-glance line and a row of apps under the clock, a heavy rounded clock face, depth on 8 wallpapers, a glass dock and a glass Control Center with icons and big sliders, readable labels on every wallpaper.

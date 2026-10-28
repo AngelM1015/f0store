@@ -1,13 +1,13 @@
 0daylife is the phone edition of Flux0S: the home screen GrapheneOS ships (Launcher3 from Android 16), with the Flux0S look and the axi0 apps on top.
 
 * Everything Launcher3 does: pages, dock, folders, widgets, app shortcuts, the app drawer with search, icon packs, gestures, backup.
-* The Flux0S look by default: dark, the axi0 tile shape, Instrument Sans, a glass dock.
-* A clock on page one with four faces; long press it to change.
-* 15 wallpapers from the Webb and Hubble telescopes and NASA, credited; three put the clock behind their subject (depth).
+* The Flux0S look by default: dark, themed icons in one shape (with a built-in icon pack for apps without their own), Instrument Sans, a glass dock that blurs the wallpaper.
+* Page one: a clock with five faces (a heavy rounded one by default), an at-a-glance line with the date, your next alarm, charging and, if you allow it, your next event; a row of your apps under it.
+* 15 wallpapers from the Webb and Hubble telescopes and NASA, credited; eight put the clock behind their subject (depth), and every label stays readable on each.
 * Search finds apps, shortcuts and settings; a web search opens search.axi0.io in your browser.
 * The axi0 folder opens the native axi0 Suite when installed, else search.axi0.io.
 * Hidden apps, and locked apps that open only after your fingerprint, face or screen lock.
-* Control Center: swipe down for volume, torch, Internet and NFC; brightness, Do Not Disturb and media only after you allow them.
+* Control Center: swipe down for a glass sheet with Internet, Bluetooth, NFC and the torch, big sliders for media volume and brightness, Focus, notifications and sound; brightness, Do Not Disturb and the media card only after you allow them.
 * No internet permission: it cannot send anything anywhere.
 
 The lock screen clock, the system Quick Settings, the volume panel and the status bar belong to the system: their Flux0S versions come with the 0daylife OS build, not with this app.
