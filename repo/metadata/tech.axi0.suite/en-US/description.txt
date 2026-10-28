@@ -1,0 +1,12 @@
+The axi0 suite on your phone without a browser around it: Notes, Drive, Photos, Mail, Meet, Calendar, Tasks, Docs
+and the rest of the suite's applets, each in its own task with its own name and icon in Recents.
+
+* The icon opens the suite's launcher; long-press it for Lock, the applet list and the applets you opened last.
+* Links to search.axi0.io from any app open here, in their applet.
+* Your axi0 Key stays inside the app: tick "Stay on this browser" and it survives restarts; it never goes to a
+  browser or a backup. Lock wipes it from the phone; your lockers stay on the Keep.
+* A Key you make is saved to Downloads as a .axi0key file; files you save from the pages go to Downloads too.
+* Meet and Recorder ask for the camera and microphone when they need them; location is off unless you switch it on.
+* Everything that is not search.axi0.io opens in your browser.
+
+Built on Capacitor (MIT). A WebView has no notifications or push: reminders reach you through a browser or Flux0S.
