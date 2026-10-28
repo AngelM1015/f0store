@@ -1,11 +1,15 @@
-0daylife is the Flux0S home screen for Android 12 and newer, made for GrapheneOS phones.
+0daylife is the phone edition of Flux0S: the home screen GrapheneOS ships (Launcher3 from Android 16), with the Flux0S look and the axi0 apps on top.
 
-The home opens on the depth clock, the day over the time in the house font, set into your wallpaper. Under it, pages of a grid you size yourself, a glass dock, your apps, and the axi0 suite's tiles (Search, Mail, Calendar, Notes, Drive, Photos, Tasks, Kan0, 0Games, 0Auth and the rest), each opening its page in your browser.
+* Everything Launcher3 does: pages, dock, folders, widgets, app shortcuts, the app drawer with search, icon packs, gestures, backup.
+* The Flux0S look by default: dark, the axi0 tile shape, Instrument Sans, a glass dock.
+* A clock on page one with four faces; long press it to change.
+* 15 wallpapers from the Webb and Hubble telescopes and NASA, credited; three put the clock behind their subject (depth).
+* Search finds apps, shortcuts and settings; a web search opens search.axi0.io in your browser.
+* The axi0 folder opens the native axi0 Suite when installed, else search.axi0.io.
+* Hidden apps, and locked apps that open only after your fingerprint, face or screen lock.
+* Control Center: swipe down for volume, torch, Internet and NFC; brightness, Do Not Disturb and media only after you allow them.
+* No internet permission: it cannot send anything anywhere.
 
-- Swipe up for the drawer: search your apps by name or alias ("spreadsheet" finds Sheets); the last row searches the web at search.axi0.io.
-- Glass panels: the wallpaper and the home blur behind every panel; flat panels where blur is off.
-- Widgets from a gallery, with an edit mode: drag, sizes in whole cells, remove.
-- Folders by dropping one icon on another; long-press menus on icons, folders, widgets and the wallpaper.
-- Quick settings show our apps' states only, from Axi0s Services: Key unlocked, last sync, "3 new" per app, never what is new.
-- Settings: make it your home app, the grid, blur, the clock, labels, and Forget everything.
-- No analytics, no crash reporting, no account, no INTERNET permission. The only thing that leaves is the search you hand to your browser.
+The lock screen clock, the system Quick Settings, the volume panel and the status bar belong to the system: their Flux0S versions come with the 0daylife OS build, not with this app.
+
+Built on Launcher3 from the Android Open Source Project (Apache-2.0); the licences of every part are listed in the app.
