@@ -9,6 +9,4 @@ and the rest of the suite's applets, each in its own task with its own name and 
 * Meet and Recorder ask for the camera and microphone when they need them; location is off unless you switch it on.
 * Everything that is not search.axi0.io opens in your browser.
 
-Built on Native Alpha (GPL-3.0-or-later). The source of each release is published next to its APK in this repository
-(tech.axi0.suite_<version>_src.tar.gz). A WebView has no notifications or push: reminders reach you through a browser
-or Flux0S.
+Built on Capacitor (MIT). A WebView has no notifications or push: reminders reach you through a browser or Flux0S.

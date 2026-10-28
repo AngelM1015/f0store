@@ -1,2 +1,2 @@
-First release, on Native Alpha 1.5.2: the suite's 28 applets in their own tasks, App Links for search.axi0.io,
-applet shortcuts, Lock, the Key kept in the app, downloads to Downloads, camera and microphone for Meet and Recorder.
+First release: the suite's 28 applets in their own tasks, App Links for search.axi0.io, applet shortcuts, Lock, the
+Key kept in the app, downloads to Downloads, camera and microphone for Meet and Recorder.

@@ -31,9 +31,8 @@ Any other repository can be added by its link or QR code, as in Droid-ify.
 
 Apps in our repository besides F0Store itself: axi0 Photo Sync (`tech.axi0.photosync`, built in
 https://github.com/AngelM1015/axi0-photo-sync), 0daylife, the Flux0S launcher (`tech.axi0.daylife`, built in
-https://github.com/AngelM1015/0daylife) and axi0, the suite's applets as an app (`tech.axi0.suite`, built in
-https://github.com/AngelM1015/axi0-android on Native Alpha, with its source tarball next to each APK), all signed with
-the F0Store APK key. Each app's CI puts its APK and a
+https://github.com/AngelM1015/0daylife) and axi0, the suite's applets as an app (`tech.axi0.suite`, a closed app built in a private
+repository), all signed with the F0Store APK key. Each app's CI puts its APK and a
 `<package>.latest` line into the repository directory; the publish job here lists the newest one in the signed index.
 
 ## What the app sends, and to whom
