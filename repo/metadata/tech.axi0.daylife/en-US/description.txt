@@ -1,0 +1,11 @@
+0daylife is the Flux0S home screen for Android 12 and newer, made for GrapheneOS phones.
+
+The home opens on the depth clock, the day over the time in the house font, set into your wallpaper. Under it, pages of a grid you size yourself, a glass dock, your apps, and the axi0 suite's tiles (Search, Mail, Calendar, Notes, Drive, Photos, Tasks, Kan0, 0Games, 0Auth and the rest), each opening its page in your browser.
+
+- Swipe up for the drawer: search your apps by name or alias ("spreadsheet" finds Sheets); the last row searches the web at search.axi0.io.
+- Glass panels: the wallpaper and the home blur behind every panel; flat panels where blur is off.
+- Widgets from a gallery, with an edit mode: drag, sizes in whole cells, remove.
+- Folders by dropping one icon on another; long-press menus on icons, folders, widgets and the wallpaper.
+- Quick settings show our apps' states only, from Axi0s Services: Key unlocked, last sync, "3 new" per app, never what is new.
+- Settings: make it your home app, the grid, blur, the clock, labels, and Forget everything.
+- No analytics, no crash reporting, no account, no INTERNET permission. The only thing that leaves is the search you hand to your browser.
