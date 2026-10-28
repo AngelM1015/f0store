@@ -69,6 +69,13 @@ Builds, signing, emulator tests and the repository publish all run in GitHub Act
 
 Locally: `./gradlew assembleDebug` with JDK 17 and the Android SDK, as for Droid-ify.
 
+## Built on
+
+What this repository takes from free projects and what is ours; every package and licence is in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+- **[Droid-ify](https://github.com/Droid-ify/client)** 0.7.8 (commit ff1453ed957f), GPL-3.0: forked: the whole client (NOTICE.md dates every change). Ours: the F0Store shelf, picks, our repository, store rules (TERMS.md).
+- **[F-Droid and IzzyOnDroid repositories](https://f-droid.org/)**, their terms (TERMS.md): the app catalogues it reads.
+
 ## Licence
 
 GPL-3.0, see [LICENSE](LICENSE). Copyright of the Droid-ify and Foxy Droid code stays with their authors; the
