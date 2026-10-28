@@ -96,3 +96,5 @@ Apache-2.0: 59; MIT: 4; EPL-2.0: 4; GPL-2.0 with Classpath Exception: 1
 
 - Vendored folders: the files named in their row, inside the folder.
 - npm packages and Rust crates: each package's own licence file, inside its published archive (the link on its name).
+
+<!-- third-party-notices settings: {"vendoredScan":"licence-files"} -->
