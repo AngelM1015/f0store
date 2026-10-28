@@ -31,6 +31,17 @@ for pkgs in json.load(open('live-v1.json')).get('packages', {}).values():
 EOF
 fi
 cp "$apk" "repo/tech.axi0.f0store_${code}.apk"
+# The other axi0 apps (one metadata file each): their own CI puts <package>_<code>.apk and <package>.latest (the APK
+# name and its SHA-256) into the live directory; the newest of each is listed here, checked against that hash.
+for y in "$here"/metadata/*.yml; do
+  pkg=$(basename "$y" .yml); [ "$pkg" = tech.axi0.f0store ] && continue
+  latest=$(curl -fsS -A f0store-publish/1 "$LIVE/$pkg.latest" 2>/dev/null) || { echo "no $pkg.latest live yet: $pkg not listed" >&2; continue; }
+  name=${latest%% *}; want=${latest##* }
+  case "$name" in "$pkg"_[0-9]*.apk) ;; *) echo "bad $pkg.latest" >&2; exit 1;; esac
+  [ -s "repo/$name" ] || curl -fsS -A f0store-publish/1 "$LIVE/$name" -o "repo/$name"
+  [ "$(sha256sum "repo/$name" | cut -d' ' -f1)" = "$want" ] || { echo "$name does not match $pkg.latest" >&2; exit 1; }
+  echo "listed $name"
+done
 cp -R "$here/metadata/." metadata/
 # Our icon wherever fdroidserver looks for repo_icon, so it never falls back to its own placeholder artwork.
 mkdir -p repo/icons && cp "$here/icon.png" repo/icons/icon.png && cp "$here/icon.png" icon.png

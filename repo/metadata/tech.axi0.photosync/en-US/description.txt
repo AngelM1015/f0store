@@ -1,0 +1,9 @@
+axi0 Photo Sync watches the phone's camera roll and uploads new pictures and videos into your axi0 Key's Photos, the same Photos you open on the web at search.axi0.io/photos and in Flux0S.
+
+Every picture is sealed on the phone before it leaves (AES-256-GCM, keys derived from your Key for that file alone), exactly as the web Photos page does it: the storage layer sees sizes and opaque ids, never a name or a byte of a picture. The same picture is never stored twice.
+
+- Import your Key from its .axi0key file, by pasting it, or by scanning the QR the axi0 pages show.
+- Wi-Fi only by default; only while charging if you want; videos up to a size you choose.
+- A status screen: what was backed up, what is waiting, how much of the drive is used; a full drive says so plainly.
+- Forget Key: one tap, and nothing of yours is left on the phone.
+- No analytics, no crash reporting, no account. The app talks to one place, the Drive layer at search.axi0.io.
