@@ -1,1 +1,1 @@
-The Flux0S home screen: depth clock, glass panels, widgets, folders, no network
+The Flux0S home screen: Launcher3 from Android 16 with the axi0 apps, no internet
