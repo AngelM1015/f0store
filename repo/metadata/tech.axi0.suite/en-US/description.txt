@@ -7,6 +7,10 @@ and the rest of the suite's applets, each in its own task with its own name and 
   browser or a backup. Lock wipes it from the phone; your lockers stay on the Keep.
 * A Key you make is saved to Downloads as a .axi0key file; files you save from the pages go to Downloads too.
 * Meet and Recorder ask for the camera and microphone when they need them; location is off unless you switch it on.
+* Reminders from Tasks and Calendar as notifications, sent ahead while your Key is open there. They say what kind
+  and how many ("2 tasks due"), not what: titles only if you turn on Show titles in the app's Notifications settings.
+* Share to axi0 from any app: text becomes a note (axi0 Notes), pictures and videos go up to axi0 Photos, any other
+  file to axi0 Drive, once your Key is open.
 * Everything that is not search.axi0.io opens in your browser.
 
-Built on Capacitor (MIT). A WebView has no notifications or push: reminders reach you through a browser or Flux0S.
+Built on Capacitor and its Local Notifications plugin (MIT).

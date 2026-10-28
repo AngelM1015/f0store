@@ -1,0 +1,3 @@
+Reminders from Tasks and Calendar as notifications: what kind and how many ("2 tasks due"), titles only if you turn
+on Show titles in the app's Notifications settings; a tap opens the applet. Share to axi0: text to Notes, pictures and
+videos to Photos (several at once), other files to Drive. Lock also drops reminders and shares not taken yet.
