@@ -1,0 +1,1 @@
+Fixes from the 0.3 screens: themed icons now switch on for phones updated from earlier versions, every icon has one shape and tint (Settings and Camera included), one hint in the drawer's search bar, depth wallpapers no longer hide most of the minutes (a subject covers at most a third of a digit), and larger icons in the axi0 folder preview.
